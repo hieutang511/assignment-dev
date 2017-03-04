@@ -32,7 +32,18 @@ class PaymentsController extends \yii\rest\Controller
 
     public function actionPaginate()
     {
-        return $this->render('paginate');
+        $request = \Yii::$app->request;
+
+        $draw = $request->post('draw', 1);
+        $start = $request->post('start', 0);
+        $length = $request->post('length', 10);
+
+        $id_order = 'asc';
+        $order = $request->post('order', []);
+        if (!empty($order[0]) && !empty($order[0]['dir'])) {
+            $id_order = $order[0]['dir'];
+        }
+        return Payments::paginate($draw, $start, $length, $id_order);
     }
 
     public function actionGetAmountByMonth()

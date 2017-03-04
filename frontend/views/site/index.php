@@ -11,4 +11,15 @@ $this->title = 'Dashboard';
     </div>
     <canvas id="myChart"></canvas>
 
+    <h2>The List</h2>
+    <table id="myTable" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Player Id</th>
+                <th>Payment Date</th>
+                <th>Currency</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+    </table>
 </div>
