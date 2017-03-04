@@ -15,6 +15,7 @@
   `php init`
   - Apply migrations
   `./yii migrate`
+  
 ##### How to turn docker off
 - Open another Terminal and go into project directory (or Ctrl+C at the current terminal)
  - Turn docker of with this command
