@@ -71,4 +71,23 @@ class Payments extends \yii\db\ActiveRecord
 
         return $results;
     }
+
+    public static function paginate($draw, $start, $length, $id_order) {
+        $count = Yii::$app->db->createCommand('SELECT COUNT(id) FROM payments')->queryScalar();
+
+        $sql = "SELECT person_id, DATE(FROM_UNIXTIME(payment_date)), playing_currency, playing_original_amount
+            FROM payments
+            ORDER BY person_id $id_order
+            LIMIT $start, $length";
+   
+        $command = Yii::$app->db->createCommand($sql);
+
+        ;
+        return [
+            'draw' => $draw,
+            'recordsTotal' => $count,
+            'recordsFiltered' => $count,
+            'data' => $command->queryAll(\PDO::FETCH_NUM)
+        ];
+    }
 }

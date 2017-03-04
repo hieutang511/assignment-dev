@@ -17,6 +17,8 @@ $( document ).ready(function() {
     	lineBtn.addClass('disabled');
     	drawLineChart();
     })
+
+    drawTable();
 });
 
 function getAmountByMonth() {
@@ -57,4 +59,22 @@ function drawLineChart() {
 	chartConfig.type = 'line';
 	var ctx = document.getElementById('myChart').getContext('2d');
 	var myChart = new Chart(ctx, chartConfig);
+}
+
+function drawTable() {
+    $('#myTable').DataTable( {
+    	"searching": false,
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": "http://api.assignment.dev/payments/paginate",
+            "type": "POST"
+        },
+        "columns": [
+		    { 'orderable': true },
+		    { 'orderable': false },
+		    { 'orderable': false },
+		    { 'orderable': false },
+		]
+    });
 }
