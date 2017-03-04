@@ -1,5 +1,5 @@
 assignment-db:
-  image: mysql:5.5
+  image: hieutang511/assignment-mysql
   container_name: assignment-db
   ports:
       - "3306:3306"
