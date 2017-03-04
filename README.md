@@ -7,20 +7,20 @@
   - Clone the project
   - Open a Terminal, go into project directory
   - Run docker with this command
-  `docker-compose up`
+`docker-compose up`
   - SSH into docker container
   `docker exec -it assignment-server bash`
   - Initiate project environment, select Development (just first time)
-  ```
-  cd /var/www/assignment
-  php init
-  ```
+```
+cd /var/www/assignment
+php init
+```
   - Apply migrations
-  `./yii migrate`
+`./yii migrate`
 
 ##### How to turn docker off
 - Open another Terminal and go into project directory (or Ctrl+C at the current terminal)
- - Turn docker of with this command
+- Turn docker of with this command
   `docker-compose down`
 
 # Testing
