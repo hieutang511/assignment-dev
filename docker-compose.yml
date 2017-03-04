@@ -1,0 +1,20 @@
+assignment-db:
+  image: mysql:5.5
+  container_name: assignment-db
+  ports:
+      - "3306:3306"
+  environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: assignment
+      MYSQL_USER: assignment
+      MYSQL_PASSWORD: assignment
+  cpu_quota: 50000
+assignment-server:
+    image: hieutang511/assignment-php
+    container_name: assignment-server
+    ports:
+     - "80:80"
+    volumes:
+     - .:/var/www/assignment
+    links:
+     - assignment-db
