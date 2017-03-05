@@ -16,9 +16,7 @@ $this->title = 'Dashboard';
         <thead>
             <tr>
                 <th>Player Id</th>
-                <th>Payment Date</th>
-                <th>Currency</th>
-                <th>Amount</th>
+                <th>Aggregated Orders</th>
             </tr>
         </thead>
     </table>
