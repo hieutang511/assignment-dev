@@ -73,8 +73,6 @@ function drawTable() {
         "columns": [
 		    { 'orderable': true },
 		    { 'orderable': false },
-		    { 'orderable': false },
-		    { 'orderable': false },
 		]
     });
 }
